@@ -164,9 +164,9 @@ for video_file in video_files:
     # You need to sort filmes by conditions. First condition: genre is comedy and year less than 2000.
     # Second condtion is genre is comedy or thriller and film's year is greater or equal to 2019
     if  # -- * Your code here * --
-    video_to_watch_for_fun.append(video_file)
+        video_to_watch_for_fun.append(video_file)
     elif  # -- * Your code here * --
-    new_video_to_watch.append(video_file)
+        new_video_to_watch.append(video_file)
     else:
         maybe_later.append(video_file)
 
