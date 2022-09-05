@@ -170,15 +170,15 @@ for video_file in video_files:
     else:
         maybe_later.append(video_file)
 
-    # Use the method to create a comma separated strinf if files.
-    # ["video_1.mp4", "video_2.mp4"] -> "video_1.mp4, video_2.mp4"
-    video_to_watch_for_fun =  # -- * Your code here * --
-    new_video_to_watch =  # -- * Your code here * --
-    maybe_later =  # -- * Your code here * --
+# Use the method to create a comma separated strinf if files.
+# ["video_1.mp4", "video_2.mp4"] -> "video_1.mp4, video_2.mp4"
+video_to_watch_for_fun =  # -- * Your code here * --
+new_video_to_watch =  # -- * Your code here * --
+maybe_later =  # -- * Your code here * --
 
-    print("I want to watch it for fun:", video_to_watch_for_fun, end="\n\n")
-    print("I want to watch new video:", new_video_to_watch, end="\n\n")
-    print("Nah, I might watch it later:", maybe_later, end="\n\n")
+print("I want to watch it for fun:", video_to_watch_for_fun, end="\n\n")
+print("I want to watch new video:", new_video_to_watch, end="\n\n")
+print("Nah, I might watch it later:", maybe_later, end="\n\n")
 
 # RESULT
 # I want to watch it for fun: (comedy) The Philadelphia Story (1940).mp4, (comedy) Harold and Maude (1971).mp4
