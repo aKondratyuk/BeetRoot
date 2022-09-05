@@ -157,9 +157,9 @@ for video_file in video_files:
     # Retrieve genre and year out of paranthesis
     # Hint! Use genre/year[index_1:index_2]. Find the method to get indexes of two parenthesis
     genre = genre[  # -- * Your code here * --]
-        year = year[  # -- * Your code here * --]
-        # Convert year to numeric value
-        year =  # -- * Your code here * --
+    year = year[  # -- * Your code here * --]
+    # Convert year to numeric value
+    year =  # -- * Your code here * --
 
     # You need to sort filmes by conditions. First condition: genre is comedy and year less than 2000.
     # Second condtion is genre is comedy or thriller and film's year is greater or equal to 2019
