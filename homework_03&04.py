@@ -14,7 +14,7 @@ files = ["april_dashboard.xlsx", "may_dashboard.xlsx", "june_dashboard.xlsx",
 
 for file in files:
     # Print all your files
-    # -- * Your code here * --
+    print(file)
 
 # RESULT:
 # april_dashboard.xlsx
@@ -37,7 +37,7 @@ for file in files:
 
 # How many files in folder?
 # Use built-in function len
-number_of_files =  # -- * Your code here * --
+number_of_files = len(files) # -- * Your code here * --
 print(f"Number of files in folder \"Downloads\" is {number_of_files}.")
 
 # RESULT
@@ -48,7 +48,7 @@ file_extensions = []
 for file in files:
     # Use a right method to separate file name and file-extension
     # You can write _ if you it's not important value. In this case I don't need to know file_name
-    _, file_extension = file.  # -- * Your code here * --
+    _, file_extension = file.split('.')  
 
     # Easy to understand such condition "not in". Which leads to only unique file-extensions
     if file_extension not in file_extensions:
@@ -66,13 +66,13 @@ video_files = []
 
 for file in files:
     # Which method can check file extension at the end?
-    if file.# -- * Your code here * --
+    if file.endswith('xlsx'): 
         excel_files.append(file)
-    elif # -- * Your code here * --
+    elif file.endswith('pptx'):
         powerpoint_files.append(file)
-    elif # -- * Your code here * --
+    elif file.endswith('pdf'):
         book_files.append(file)
-    elif # -- * Your code here * --
+    elif file.endswith('mp4'):
         video_files.append(file)
 
 print("Excel files:", excel_files, end = "\n\n")
@@ -103,10 +103,10 @@ Q4 = ["October", "November", "December"]
 excel_files_for_boss = []
 for excel_file in excel_files:
     # Separate month and other stuff out of excel file name
-    month, _ = excel_file.  # -- * Your code here * --
+    month, _ = excel_file.split('_')
 
     # Make condition to check if month belongs to Q2
-    if month.  # -- * Your code here * --
+    if month.capitalize() in Q2:
         excel_files_for_boss.append(excel_file)
 
 print(excel_files_for_boss)
@@ -117,12 +117,12 @@ print(excel_files_for_boss)
 # Your Boss has sent you a new task: send all dashboards that has the same powerpoint presentaitions
 excel_files_for_boss = []
 for excel_file in excel_files:
-    excel_file_name, _ = excel_file.  # -- * Your code here * --
+    excel_file_name, _ = excel_file.split('.')
 
     for powerpoint_file in powerpoint_files:
-        powerpoint_file_name, _ = powerpoint_file.  # -- * Your code here * --
+        powerpoint_file_name, _ = powerpoint_file.split('.')
 
-        if  # -- * Your code here * --
+        if  powerpoint_file_name == excel_file_name:
             excel_files_for_boss.append(excel_file)
 
 print(excel_files_for_boss)
@@ -137,8 +137,13 @@ for book_file in book_files:
     # Hint! To get last element of list use index [-1] like my_list[-1]
     # Hint! Do not forget to convert number_of_pages to number type
     # -- * Your code here * --
+    
+    first_split, _ = book_file.split('.')
+    second_split, _ = first_split.split('-')
+    third_split = second_split.split()
+    pages = int(third_split[-1])
 
-    if  # -- * Your code here * -- number_of_pages # -- * Your code here * --
+    if  pages > 120:
         read_list.append(book_file)
 
 print(read_list)
