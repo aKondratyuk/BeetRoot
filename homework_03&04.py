@@ -16,7 +16,7 @@ for file in files:
     # Print all your files
     print(file)
 
-# RESULT:
+# RESULT: 
 # april_dashboard.xlsx
 # may_dashboard.xlsx
 # june_dashboard.xlsx
@@ -151,35 +151,40 @@ print(read_list)
 # RESULT
 # ['Clean Code 250-pages.pdf', 'War&Peace 150-pages.pdf']
 
+# Video files: ['(thriller) The Gray Man (2022).mp4', '(thriller) Level 16 (2018).mp4',
+#               '(thriller) Synchronic (2019).mp4', '(comedy) The Philadelphia Story (1940).mp4',
+#               '(comedy) Harold and Maude (1971).mp4', '(comedy) Booksmart (2019).mp4']
+
 video_to_watch_for_fun = []
 new_video_to_watch = []
 maybe_later = []
 
 for video_file in video_files:
-    splited_text = video_file.split()
-    genre, year = splited_text[0], splited_text[-1]
+    splited_name, _ = video_file.split('.')
+    splited_details = splited_name.split()
+    genre, year = splited_details[0], splited_details[-1]
 
     # Retrieve genre and year out of paranthesis
     # Hint! Use genre/year[index_1:index_2]. Find the method to get indexes of two parenthesis
-    genre = genre[  # -- * Your code here * --]
-    year = year[  # -- * Your code here * --]
+    genre = genre[1:-1]
+    year = year[1:-1]
     # Convert year to numeric value
-    year =  # -- * Your code here * --
+    year = int(year) # -- * Your code here * --
 
     # You need to sort filmes by conditions. First condition: genre is comedy and year less than 2000.
     # Second condtion is genre is comedy or thriller and film's year is greater or equal to 2019
-    if  # -- * Your code here * --
+    if genre == 'comedy' and year < 2000:
         video_to_watch_for_fun.append(video_file)
-    elif  # -- * Your code here * --
+    elif genre == 'comedy' or genre == 'thriller' and year >=2019:
         new_video_to_watch.append(video_file)
     else:
         maybe_later.append(video_file)
 
 # Use the method to create a comma separated strinf if files.
 # ["video_1.mp4", "video_2.mp4"] -> "video_1.mp4, video_2.mp4"
-video_to_watch_for_fun =  # -- * Your code here * --
-new_video_to_watch =  # -- * Your code here * --
-maybe_later =  # -- * Your code here * --
+video_to_watch_for_fun = ', '.join(video_to_watch_for_fun) # -- * Your code here * --
+new_video_to_watch = ', '.join(new_video_to_watch) # -- * Your code here * --
+maybe_later = ', '.join(maybe_later) # -- * Your code here * --
 
 print("I want to watch it for fun:", video_to_watch_for_fun, end="\n\n")
 print("I want to watch new video:", new_video_to_watch, end="\n\n")
